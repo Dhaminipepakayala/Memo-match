@@ -1,0 +1,87 @@
+<!DocTYPE html>
+<html>
+<head>
+<title>Memory Matching</title>
+<link rel="stylesheet" href="style.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> 
+<script>
+    $(document).ready(function(){
+    var a=$("#images > span").remove().toArray();
+    
+    for(var i=a.length-1;i>=1;i--)
+    {
+    var j=Math.floor(Math.random()*(i+1));
+      var bi=a[i];
+      var bj=a[j];
+      a[i]=bj;
+      a[j]=bi;
+    }
+    $("#images").append(a)
+
+
+});
+</script>
+</head>
+<body>
+
+    
+    <div class="bg">
+
+        <div id="game">         
+            <div id="moves">           
+           <p>Moves&ensp;:&ensp;<p id="move">0</p></p>
+    
+           <button onClick="window.location.reload()">Restart</button></div>
+           <center>   
+<div id="gameover">
+   <h1>Awesome!</h1>
+   <h3 id="tot"></h3>
+   <button onClick="window.location.reload()">Play again</button>
+</div>
+
+
+<div id="images">
+   
+   <span id="0"  onClick="show(this.id)"><img height="138" width="154" src="images/emo1.jpg" class="rotate"  ></span>
+   <span id="1"  onClick="show(this.id)"><img height="138" width="154" src="images/emo2.jpg" class="rotate"  ></span> 
+   <span id="2"  onClick="show(this.id)"><img height="138" width="154" src="images/emo3.jpg" class="rotate"  ></span> 
+   <span id="3"  onClick="show(this.id)"><img height="138" width="154" src="images/emo5.jpg" class="rotate"  ></span> 
+   <span id="4"  onClick="show(this.id)"><img height="138" width="154" src="images/emo6.jpg" class="rotate"  ></span>
+   <span id="5"  onClick="show(this.id)"><img height="138" width="154" src="images/emo7.jpg" class="rotate"  ></span>
+   <span id="6"  onClick="show(this.id)"><img height="138" width="154" src="images/emo8.jpg" class="rotate"  ></span>
+   <span id="7"  onClick="show(this.id)"><img height="138" width="154" src="images/emo9.jpg" class="rotate"  ></span>
+   <span id="8"  onClick="show(this.id)"><img height="138" width="154" src="images/emo1.jpg" class="rotate"  ></span>
+   <span id="9"  onClick="show(this.id)"><img height="138" width="154" src="images/emo2.jpg" class="rotate"  ></span> 
+   <span id="10" onClick="show(this.id)"><img height="138" width="154" src="images/emo3.jpg" class="rotate" ></span> 
+   <span id="11" onClick="show(this.id)"><img height="138" width="154" src="images/emo5.jpg" class="rotate" ></span>
+   <span id="12" onClick="show(this.id)"><img height="138" width="154" src="images/emo6.jpg" class="rotate" ></span>
+   <span id="13" onClick="show(this.id)"><img height="138" width="154" src="images/emo7.jpg" class="rotate" ></span>
+   <span id="14" onClick="show(this.id)"><img height="138" width="154" src="images/emo8.jpg" class="rotate" ></span>
+   <span id="15" onClick="show(this.id)"><img height="138" width="154" src="images/emo9.jpg" class="rotate" ></span> 
+</div>
+</center>
+</div>
+        <div id="intro">
+        <h1>Memo Match: </h1><h2>Match pictures in pairs</h2>
+        <center>
+        <button onClick="fun('howtoplay','intro')">How To Play</button>
+        <button onClick="start('game','intro')">Start</button></div>
+        </center>
+    
+    </div>
+    <div id="howtoplay">
+        <ul>
+            <li>  Click on a card to turn it over and find the same matching card.</li>
+            <li>Find all the pairs as fast as possible.</li>
+            
+        </ul>
+        <button onClick="fun1('howtoplay','intro')">close</button>
+
+    </div>
+    
+</div>
+<script src="script.js"></script>
+
+</body>
+</html>
